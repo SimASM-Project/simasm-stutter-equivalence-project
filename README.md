@@ -6,8 +6,8 @@ A research project demonstrating formal behavioral equivalence between discrete-
 
 This project validates that **different simulation formalisms produce behaviorally equivalent results** when modeling the same system. It compares two classic DES formalisms:
 
-- **Event Graph** (Schruben, 1983) — models systems as directed graphs of event vertices with scheduling edges
-- **Activity Cycle Diagram** (Tocher, 1960; Carrie, 1988) — models systems using passive states (queues) and active states (activities) with token flow
+- **Event Graph** (Schruben, 1983): models systems as directed graphs of event vertices with scheduling edges
+- **Activity Cycle Diagram** (Tocher, 1960; Carrie, 1988): models systems using passive states (queues) and active states (activities) with token flow
 
 Equivalence is verified using **stutter equivalence** (Mokkedem & Mery, 1997): two execution traces are equivalent if their no-stutter traces (consecutive duplicates removed) are identical over a shared observation level.
 
@@ -54,18 +54,18 @@ jupyter notebook
 
 Open any `.ipynb` file and run cells sequentially. Each notebook follows the workflow:
 
-1. **Define** — JSON specification of the system model
-2. **Convert** — `%%simasm convert` generates executable SimASM code
-3. **Verify** — `%%simasm verify` runs multi-seed stutter equivalence checks
-4. **Visualize** — auto-generated plots of trace comparison, convergence, and stutter distribution
+1. **Define**: JSON specification of the system model
+2. **Convert**: `%%simasm convert` generates executable SimASM code
+3. **Verify**: `%%simasm verify` runs multi-seed stutter equivalence checks
+4. **Visualize**: auto-generated plots of trace comparison, convergence, and stutter distribution
 
 ## How It Works
 
 SimASM provides Jupyter magic commands for a complete simulation verification pipeline:
 
-- `%%simasm convert` — converts JSON model specifications into executable SimASM (a DSL for DES)
-- `%%simasm experiment` — runs statistical experiments with replications
-- `%%simasm verify` — performs bounded multi-seed stutter equivalence verification
+- `%%simasm convert`: converts JSON model specifications into executable SimASM (a DSL for DES)
+- `%%simasm experiment`: runs statistical experiments with replications
+- `%%simasm verify`: performs bounded multi-seed stutter equivalence verification
 
 The **observation level** W defines the set of atomic propositions (e.g., number of busy servers) used to extract observable behavior from raw execution traces. Two models are W-stutter equivalent if, for every shared random seed, their projected no-stutter traces match.
 
