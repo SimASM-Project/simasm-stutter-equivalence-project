@@ -9,7 +9,7 @@ This project validates that **different simulation formalisms produce behavioral
 - **Event Graph** (Schruben, 1983): models systems as directed graphs of event vertices with scheduling edges
 - **Activity Cycle Diagram** (Tocher, 1960; Carrie, 1988): models systems using passive states (queues) and active states (activities) with token flow
 
-Equivalence is verified using **stutter equivalence** (Mokkedem & Mery, 1997): two execution traces are equivalent if their no-stutter traces (consecutive duplicates removed) are identical over a shared observation level.
+Equivalence is verified using **stutter equivalence**: two execution traces are equivalent if their no-stutter traces (consecutive duplicates removed) are identical over a shared observation level.
 
 ## Notebooks
 
